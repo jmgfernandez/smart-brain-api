@@ -10,7 +10,7 @@ const handleImage = (req, res, db) => {
 }
 
 const returnClarifaiRequestOptions = (imageUrl) => {
-    const PAT = 'bfce70bf06564e5aa765bf56460e8ebb';
+    const PAT = process.env.PAT_CLARIFAI;
     const USER_ID = 'jmgfernandez';       
     const APP_ID = 'test';
     const IMAGE_URL = imageUrl;
