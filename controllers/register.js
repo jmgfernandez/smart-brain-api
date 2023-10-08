@@ -30,6 +30,7 @@ const handleRegister = (req, res, bcrypt, db) => {
         .catch(err => res.status(400).json('unable to register')) 
 }
 
-module.exports = {
-    handleRegister
-}
+// module.exports = {
+//     handleRegister
+// }
+export default handleRegister;

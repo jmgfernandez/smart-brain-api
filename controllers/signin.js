@@ -21,7 +21,8 @@ const handleSignin = (bcrypt, db) => (req, res) => {
         .catch(err => res.status(400).json('wrong credentials'));
 }
 
-module.exports = {
-    handleSignin
-    // ES6 feature for same property names and values
-}
+// module.exports = {
+//     handleSignin
+//     // ES6 feature for same property names and values
+// }
+export default handleSignin;
