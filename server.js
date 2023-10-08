@@ -13,10 +13,10 @@ import knex from 'knex';
 // const profile = require('./controllers/profile');
 // const image = require('./controllers/image');
 
-import register from './controllers/register';
-import signin from './controllers/signin';
-import profile from './controllers/profile';
-import { handleImage, handleApiCall } from './controllers/image';
+import register from './controllers/register.js';
+import signin from './controllers/signin.js';
+import profile from './controllers/profile.js';
+import { handleImage, handleApiCall } from './controllers/image.js';
 
 const db = knex({
   client: 'pg',
