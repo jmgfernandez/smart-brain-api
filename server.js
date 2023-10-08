@@ -40,7 +40,7 @@ app.get('/', (req, res) => { res.send('success'); });
 
 // app.post('/signin', signin.handleSignin(bcrypt, db));
 
-app.post('/signin', (req, res) => { signin.handleSignin(req, res, bcrypt, db) });
+app.post('/signin', (req, res) => { signin(req, res, bcrypt, db) });
 
 app.post('/register', (req, res) => { register.handleRegister(req, res, bcrypt, db) });
 
