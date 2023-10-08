@@ -1,5 +1,5 @@
-// const handleSignin = (bcrypt, db) => (req, res) => {
-const handleSignin = (bcrypt, db, req, res) => {
+const handleSignin = (bcrypt, db) => (req, res) => {
+// const handleSignin = (bcrypt, db, req, res) => {
     const { email, password } = req.body;
     if ( !email || !password ) {
         return res.status(400).json('incorrect form submission');
@@ -22,8 +22,8 @@ const handleSignin = (bcrypt, db, req, res) => {
         .catch(err => res.status(400).json('wrong credentials'));
 }
 
-// module.exports = {
-//     handleSignin
-//     // ES6 feature for same property names and values
-// }
-export default handleSignin;
+module.exports = {
+    handleSignin
+    // ES6 feature for same property names and values
+}
+// export default handleSignin;
