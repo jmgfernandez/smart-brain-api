@@ -11,7 +11,7 @@ const knex = require('knex');
 const register = require('./controllers/register');
 const signin = require('./controllers/signin');
 const profile = require('./controllers/profile');
-const image = require('./controllers/image.mjs');
+const image = require('./controllers/image.js');
 
 // import register from './controllers/register.js';
 // import signin from './controllers/signin.js';
