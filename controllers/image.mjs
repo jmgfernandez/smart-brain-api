@@ -1,4 +1,6 @@
-const handleImage = (req, res, db) => {
+import fetch from 'node-fetch';
+
+export const handleImage = (req, res, db) => {
     const { id } = req.body;
     db('users').where('id', '=', id)
     .increment('entries', 1)
@@ -43,8 +45,7 @@ const returnClarifaiRequestOptions = (imageUrl) => {
     return requestOptions;
 };
 
-const handleApiCall = (req, res) => {
-    
+export const handleApiCall = (req, res) => {
     const MODEL_ID = 'face-detection';
     fetch("https://api.clarifai.com/v2/models/" + MODEL_ID + "/outputs", returnClarifaiRequestOptions(req.body.input))
     .then(response => response.json())
@@ -52,7 +53,7 @@ const handleApiCall = (req, res) => {
     .catch(err => res.status(400).json('unable to work with API'))
 }
 
-module.exports = {
-    handleImage,
-    handleApiCall
-}
+// module.exports = {
+//     handleImage,
+//     handleApiCall
+// }
