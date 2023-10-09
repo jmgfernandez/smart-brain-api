@@ -11,12 +11,12 @@ const knex = require('knex');
 const register = require('./controllers/register');
 const signin = require('./controllers/signin');
 const profile = require('./controllers/profile');
-// const image = require('./controllers/image');
+const image = require('./controllers/image.mjs');
 
 // import register from './controllers/register.js';
 // import signin from './controllers/signin.js';
 // import profile from './controllers/profile.js';
-import { handleImage, handleApiCall } from './controllers/image.mjs';
+// import { handleImage, handleApiCall } from './controllers/image.mjs';
 
 const db = knex({
   client: 'pg',
@@ -46,9 +46,9 @@ app.post('/register', (req, res) => { register.handleRegister(req, res, bcrypt, 
 
 app.get('/profile/:id', (req, res) => { profile.handleProfileGet(req, res, db) });
 
-app.put('/image', (req, res) => { handleImage(req, res, db) });
+app.put('/image', (req, res) => { image.handleImage(req, res, db) });
 
-app.post('/imageurl', (req, res) => { handleApiCall(req, res) });
+app.post('/imageurl', (req, res) => { image.handleApiCall(req, res) });
 
 
 app.listen(3000, () => {
